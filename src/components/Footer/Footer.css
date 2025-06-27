@@ -1,0 +1,19 @@
+.app-footer {
+  background-color: #34495e; /* Slightly darker shade of blue/grey */
+  color: #ecf0f1; /* Light text color */
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9em;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow at the top */
+  margin-top: auto; /* Pushes the footer to the bottom of the page */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.app-footer p {
+  margin: 5px 0; /* Adjust spacing between paragraphs */
+}

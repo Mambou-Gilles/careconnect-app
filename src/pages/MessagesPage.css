@@ -1,0 +1,92 @@
+/* MessagesPage Style */
+
+.message-summary-card {
+  margin-bottom: 15px;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  position: relative; /* For the 'NEW' badge */
+}
+
+.message-summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.message-summary-card.unread-message {
+  border-left: 5px solid var(--highlight-color);
+  background-color: var(--card-bg); /* Ensure background adapts */
+  font-weight: bold;
+}
+
+.message-preview {
+  font-size: 0.9em;
+  color: var(--text-color);
+  margin-top: 5px;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.new-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #2ecc71; /* Green for new */
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+.message-thread {
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 15px;
+  max-height: 400px; /* Scrollable message area */
+  overflow-y: auto;
+  background-color: var(--background-color); /* Lighter background for thread area */
+  margin-bottom: 20px;
+}
+
+.message-bubble {
+  padding: 10px 15px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  max-width: 80%;
+  position: relative;
+  word-wrap: break-word; /* Ensure long words wrap */
+}
+
+.message-bubble.sent {
+  background-color: var(--primary-color);
+  color: white;
+  margin-left: auto; /* Align to right */
+  border-bottom-right-radius: 0;
+}
+
+.message-bubble.received {
+  background-color: var(--secondary-color);
+  color: white;
+  margin-right: auto; /* Align to left */
+  border-bottom-left-radius: 0;
+}
+
+.message-sender {
+  font-weight: bold;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.message-content {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.message-date {
+  font-size: 0.7em;
+  color: rgba(255, 255, 255, 0.7); /* Lighter date text in bubbles */
+  text-align: right; /* Ensure date aligns within bubble */
+  display: block; /* To apply text-align */
+}

@@ -1,3 +1,6 @@
+/* src/index.css */
+
+/* Base styles for all themes */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +8,164 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Light Theme Variables (default) */
+body.light {
+  --background-color: #f4f7f6;
+  --text-color: #333;
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --header-bg: #2c3e50;
+  --footer-bg: #34495e;
+  --card-bg: #fff;
+  --card-border: #ddd;
+  --input-border: #ccc;
+  --highlight-color: #ffc107; /* For unread messages */
+  --link-color: #007bff;
+  --link-hover-color: #0056b3;
+}
+
+/* Dark Theme Variables */
+body.dark {
+  /* Backgrounds */
+  --background-color: #1a202c; /* A deep, professional charcoal/navy */
+  --header-bg: #2d3748;      /* Slightly lighter for header */
+  --footer-bg: #2d3748;      /* Slightly lighter for footer */
+  --card-bg: #2d3748;        /* Same as header/footer, gives a unified look */
+
+  /* Text Colors */
+  --text-color: #e2e8f0;    /* Light off-white for main text */
+  --link-color: #63b3ed;    /* A light, friendly blue for links */
+  --link-hover-color: #3182ce; /* Slightly darker blue on link hover */
+
+  /* Primary/Secondary Colors - These should pop a bit more in dark mode */
+  --primary-color: #4299e1; /* A clear, medium blue */
+  --secondary-color: #a0aec0; /* A soft, light grey for secondary actions */
+  --highlight-color: #f6ad55; /* A warm orange/yellow for unread messages */
+
+  /* Borders & Inputs */
+  --card-border: #4a5568;    /* Subtler border for cards */
+  --input-border: #4a5568;   /* Input borders match card borders */
+}
+
+
+/* Apply variables to elements */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--link-hover-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color); /* Headings use text color, or specific variable */
+}
+
+/* Update component styles to use CSS variables */
+.button.primary {
+  background-color: var(--primary-color);
+  color: var(--text-color); /* Use text-color for button text */
+}
+.button.primary:hover {
+  background-color: var(--link-hover-color); /* Darker primary on hover */
+}
+.button.secondary {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+.button.secondary:hover {
+  background-color: #7f8c8d; /* A bit darker secondary on hover */
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Adjust shadow color for dark mode if desired */
+}
+
+/* Specific styling for Messages Page */
+.unread-message {
+  border-left: 5px solid var(--highlight-color);
+  padding-left: 15px;
+}
+
+/* Input fields */
+input[type="text"], textarea, select {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+}
+
+/* Header & Footer */
+.app-header {
+  background-color: var(--header-bg);
+  color: var(--text-color);
+}
+.nav-list li a {
+  color: var(--text-color); /* Ensure nav links adapt */
+}
+.app-footer {
+  background-color: var(--footer-bg);
+  color: var(--text-color);
+}
+
+.sign-out-btn { /* Make sign out button adapt slightly or keep it red */
+  background-color: #e74c3c;
+  color: white;
+}
+.sign-out-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Specific styling for Messages Page */
+.unread-message {
+  border-left: 5px solid var(--highlight-color);
+  background-color: var(--card-bg); /* Ensure background adapts */
+  font-weight: bold;
+}
+
+.message-bubble.sent {
+  background-color: var(--primary-color);
+  color: #fff; /* White text for primary bubbles */
+  border-bottom-right-radius: 0;
+}
+
+.message-bubble.received {
+  background-color: var(--secondary-color);
+  color: #fff; /* White text for secondary bubbles */
+  border-bottom-left-radius: 0;
+}
+
+.message-date {
+  color: rgba(255, 255, 255, 0.7); /* Lighter date text in bubbles */
+}
+/*Style for AppointmentsPage fprm */
+/* In App.css or index.css */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--text-color);
 }

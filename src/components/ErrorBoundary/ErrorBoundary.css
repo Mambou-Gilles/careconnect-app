@@ -1,0 +1,21 @@
+/* src/components/ErrorBoundary/ErrorBoundary.css */
+.error-boundary-fallback {
+  text-align: center;
+  padding: 50px;
+  border: 2px dashed #e74c3c; /* Red dashed border */
+  border-radius: 10px;
+  margin: 50px auto;
+  max-width: 600px;
+  background-color: var(--card-bg); /* Use theme card background */
+  color: var(--text-color);
+}
+
+.error-boundary-fallback h2 {
+  color: #e74c3c; /* Red heading */
+  margin-bottom: 20px;
+}
+
+.error-boundary-fallback p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
