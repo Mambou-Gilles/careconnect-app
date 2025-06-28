@@ -11,20 +11,20 @@ export const mockResources = [
     category: 'Medication Management',
     title: 'Understanding Your Prescription Labels',
     description: 'A guide to help you understand the information on your medication bottles.',
-    link: '#' // Placeholder for internal content
+    link: '#' // Placeholder for internal content for future use
   },
   {
     id: 'res3',
     category: 'Mental Wellness',
     title: 'Stress Reduction Techniques',
     description: 'Explore effective techniques to manage stress and improve your mental well-being.',
-    link: '#'
+    link: '#' // Placeholder for internal content for future use
   },
   {
     id: 'res4',
     category: 'Healthy Living',
     title: 'Importance of Regular Exercise',
     description: 'Discover why physical activity is crucial for your overall health.',
-    link: '#'
+    link: '#'  // Placeholder for internal content for future use
   },
 ];

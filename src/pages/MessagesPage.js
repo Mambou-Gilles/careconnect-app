@@ -1,9 +1,9 @@
 // src/pages/MessagesPage.js
-import React, { useState } from 'react'; // Removed useEffect, useMemo for debugging
+import React, { useState } from 'react'; 
 import { useNavigate, Link } from 'react-router-dom';
 import Card from '../components/Card/Card';
 import Button from '../components/Button/Button';
-import { mockMessages } from '../data/messages'; // Assume this is static and doesn't change reference
+import { mockMessages } from '../data/messages'; // Assuming this is static and doesn't change reference
 
 import './MessagesPage.css';
 
@@ -27,9 +27,6 @@ const MessagesPage = () => {
   const [newMessageContent, setNewMessageContent] = useState('');
   const [newConversationSubject, setNewConversationSubject] = useState('');
 
-  // ALL useEffects related to setConversations are REMOVED for debugging this loop.
-  // We will re-introduce read status logic later if needed, but not through a looping useEffect.
-
   const handleStartNewConversation = () => {
     if (newConversationSubject.trim() && newMessageContent.trim()) {
       const newConvId = `msg${conversations.length + 1}`;
@@ -52,7 +49,7 @@ const MessagesPage = () => {
       // other than the initial useState call.
       setConversations(prev => {
         const updated = [...prev, newConversation];
-        // For a real app, you'd probably send this to a backend and refresh data.
+        // For a real app, we'd probably send this to a backend and refresh data.
         return updated.map(conv => ({ // Re-calculate read status for all on new message
             ...conv,
             read: calculateConversationReadStatus(conv)

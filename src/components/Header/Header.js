@@ -1,11 +1,11 @@
-// src/components/Header/Header.js
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../Context/ThemeContext'; 
 import './Header.css';
 
 const Header = () => {
-  const { theme, toggleTheme } = useTheme(); // Use the hook to get theme and toggle function
+  const { theme, toggleTheme } = useTheme(); // Using the hook to get theme and toggle function
 
   return (
     <header className="app-header">

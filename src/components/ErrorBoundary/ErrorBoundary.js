@@ -1,4 +1,4 @@
-// src/components/ErrorBoundary/ErrorBoundary.js
+
 import React from 'react';
 import './ErrorBoundary.css'; // Optional: for fallback UI styling
 import Button from '../Button/Button';
@@ -27,7 +27,7 @@ class ErrorBoundary extends React.Component {
 
   render() {
     if (this.state.hasError) {
-      // You can render any custom fallback UI
+      // Can render any custom fallback UI
       return (
         <div className="error-boundary-fallback">
           <h2>Oops! Something went wrong.</h2>

@@ -1,5 +1,5 @@
-// src/pages/MessagesPage.js
-import React, { useState } from 'react'; // useEffect might not be strictly needed here anymore
+
+import React, { useState } from 'react'; 
 import { useNavigate, Link } from 'react-router-dom';
 import Card from '../components/Card/Card';
 import Button from '../components/Button/Button';
@@ -12,7 +12,7 @@ const calculateConversationReadStatus = (conversation) => {
 };
 
 const MessagesPage = () => {
-  // Initialize conversations with their read status calculated upfront
+  // Initialize conversations with read status calculated upfront
   const [conversations, setConversations] = useState(() =>
     mockMessages.map(conv => ({
       ...conv,
@@ -24,10 +24,9 @@ const MessagesPage = () => {
   const [newMessageContent, setNewMessageContent] = useState('');
   const [newConversationSubject, setNewConversationSubject] = useState('');
 
-  // IMPORTANT: Remove the problematic useEffect here!
-  // The read status is now initialized and will be updated on the detail page.
-  // When returning to this page, the mockMessages data (which is static) will
-  // re-initialize, which is fine for a mock. In a real app, this would come from a global store or API.
+  /* The read status is now initialized and will be updated on the detail page.
+     When returning to this page, the mockMessages data (which is static) will
+     re-initialize, which is fine for a mock. In a real app, this would come from a global store or API. */
 
   const handleStartNewConversation = () => {
     if (newConversationSubject.trim() && newMessageContent.trim()) {
@@ -48,7 +47,7 @@ const MessagesPage = () => {
       };
       // For mock data, just add it. In a real app, this would persist.
       // We also need to ensure the mockMessages are updated if this new convo should appear consistently.
-      // For now, let's keep it simple: new convo adds to local state and navigates.
+      // For now, this will be simple: new convo adds to local state and navigates.
       setConversations(prev => [...prev, newConversation]);
       setNewMessageContent('');
       setNewConversationSubject('');
