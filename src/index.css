@@ -25,29 +25,35 @@ body.light {
   --highlight-color: #ffc107; /* For unread messages */
   --link-color: #007bff;
   --link-hover-color: #0056b3;
+  --button-text-color: #ffffff; /* Typically white text on primary buttons */
+  --button-secondary-text-color: #ffffff; /* Or a dark text if secondary button is light */
 }
 
 /* Dark Theme Variables */
 body.dark {
   /* Backgrounds */
   --background-color: #1a202c; /* A deep, professional charcoal/navy */
-  --header-bg: #2d3748;      /* Slightly lighter for header */
-  --footer-bg: #2d3748;      /* Slightly lighter for footer */
-  --card-bg: #2d3748;        /* Same as header/footer, gives a unified look */
+  --header-bg: #2d3748;        /* Slightly lighter for header */
+  --footer-bg: #2d3748;        /* Slightly lighter for footer */
+  --card-bg: #2d3748;          /* Same as header/footer, gives a unified look */
 
   /* Text Colors */
-  --text-color: #e2e8f0;    /* Light off-white for main text */
-  --link-color: #63b3ed;    /* A light, friendly blue for links */
+  --text-color: #e2e8f0;       /* Light off-white for main text */
+  --link-color: #63b3ed;      /* A light, friendly blue for links */
   --link-hover-color: #3182ce; /* Slightly darker blue on link hover */
 
   /* Primary/Secondary Colors - These should pop a bit more in dark mode */
-  --primary-color: #4299e1; /* A clear, medium blue */
+  --primary-color: #4299e1;    /* A clear, medium blue */
   --secondary-color: #a0aec0; /* A soft, light grey for secondary actions */
   --highlight-color: #f6ad55; /* A warm orange/yellow for unread messages */
 
   /* Borders & Inputs */
-  --card-border: #4a5568;    /* Subtler border for cards */
-  --input-border: #4a5568;   /* Input borders match card borders */
+  --card-border: #4a5568;      /* Subtler border for cards */
+  --input-border: #4a5568;     /* Input borders match card borders */
+
+  /* NEW: Button Text Colors for Dark Mode */
+  --button-text-color: #ffffff; /* White text on primary buttons (good contrast with #4299e1) */
+  --button-secondary-text-color: #1a202c; /* Dark text on secondary button (#a0aec0 is light, so need dark text) */
 }
 
 
@@ -81,14 +87,14 @@ h1, h2, h3, h4, h5, h6 {
 /* Update component styles to use CSS variables */
 .button.primary {
   background-color: var(--primary-color);
-  color: var(--text-color); /* Use text-color for button text */
+  color: var(--button-text-color); /* <-- CHANGED THIS */
 }
 .button.primary:hover {
   background-color: var(--link-hover-color); /* Darker primary on hover */
 }
 .button.secondary {
   background-color: var(--secondary-color);
-  color: var(--text-color);
+  color: var(--button-secondary-text-color); /* <-- CHANGED THIS */
 }
 .button.secondary:hover {
   background-color: #7f8c8d; /* A bit darker secondary on hover */
@@ -109,8 +115,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Input fields */
 input[type="text"], textarea, select {
-  background-color: var(--card-bg);
-  color: var(--text-color);
+  background-color: var(--card-bg); /* Use card background for inputs */
+  color: var(--text-color); /* Use general text color for input text */
   border: 1px solid var(--input-border);
 }
 
@@ -135,28 +141,7 @@ input[type="text"], textarea, select {
   background-color: #c0392b;
 }
 
-/* Specific styling for Messages Page */
-.unread-message {
-  border-left: 5px solid var(--highlight-color);
-  background-color: var(--card-bg); /* Ensure background adapts */
-  font-weight: bold;
-}
 
-.message-bubble.sent {
-  background-color: var(--primary-color);
-  color: #fff; /* White text for primary bubbles */
-  border-bottom-right-radius: 0;
-}
-
-.message-bubble.received {
-  background-color: var(--secondary-color);
-  color: #fff; /* White text for secondary bubbles */
-  border-bottom-left-radius: 0;
-}
-
-.message-date {
-  color: rgba(255, 255, 255, 0.7); /* Lighter date text in bubbles */
-}
 /*Style for AppointmentsPage fprm */
 /* In App.css or index.css */
 .form-group {

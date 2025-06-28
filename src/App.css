@@ -5,7 +5,7 @@
 }
 
 .app-header {
-  background-color: #2c3e50; /* Dark blue/grey for header */
+  background-color: var(--header-bg); /* Use variable */
   padding: 15px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -26,7 +26,7 @@
 }
 
 .nav-list li a {
-  color: #ecf0f1; /* Light text for nav links */
+  color: var( --button-text-color); /* Use variable */
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1em;
@@ -34,8 +34,8 @@
 }
 
 .nav-list li a:hover {
-  color: #3498db; /* Brighter blue on hover */
-  text-decoration: none; /* Remove underline on hover for cleaner look */
+  color: var(--link-hover-color); /* Use variable (or another specific hover variable if desired) */
+  text-decoration: none;
 }
 
 .app-main {
@@ -44,19 +44,19 @@
 }
 
 .app-footer {
-  background-color: #34495e; /* Slightly darker than header */
-  color: #ecf0f1;
+  background-color: var(--footer-bg); /* Use variable */
+  color: var(--button-text-color); /* Use variable */
   text-align: center;
   padding: 15px 20px;
   font-size: 0.9em;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Specific styling for Messages Page */
-.unread-message {
-  border-left: 5px solid #ffc107; /* Highlight unread messages */
+/* Specific styling for Messages Page - This rule is redundant here, defined in MessagesPage.css */
+/* .unread-message {
+  border-left: 5px solid var(--highlight-color);
   padding-left: 15px;
-}
-
-
-
+} */
+/* REMOVE the above .unread-message if it conflicts with MessagesPage.css or is redundant.
+   MessagesPage.css's version is already using var(--highlight-color).
+   Keep it in MessagesPage.css only. */

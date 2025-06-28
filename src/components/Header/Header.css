@@ -85,7 +85,7 @@ nav { /* Target the nav element directly */
 .theme-toggle-btn {
   background-color: transparent; /* Make it blend with header */
   border: 1px solid var(--text-color);
-  color: var(--text-color);
+  color: var(--button-text-color);
   padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;

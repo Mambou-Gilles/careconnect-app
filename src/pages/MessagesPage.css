@@ -5,22 +5,23 @@
   border-radius: 8px;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   position: relative; /* For the 'NEW' badge */
+  background-color: var(--card-bg);
 }
 
 .message-summary-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Adjust shadow color for dark mode if desired */
 }
 
 .message-summary-card.unread-message {
-  border-left: 5px solid var(--highlight-color);
+  border-left: 5px solid var(--highlight-color); /* Already using variable, good! */
   background-color: var(--card-bg); /* Ensure background adapts */
   font-weight: bold;
 }
 
 .message-preview {
   font-size: 0.9em;
-  color: var(--text-color);
+  color: var(--text-color); /* Use variable */
   margin-top: 5px;
   line-height: 1.4;
   white-space: nowrap;
@@ -32,8 +33,8 @@
   position: absolute;
   top: 15px;
   right: 15px;
-  background-color: #2ecc71; /* Green for new */
-  color: white;
+  background-color: var(--highlight-color); /* Use highlight color for badge to match unread */
+  color: var(--button-text-color); /* Use button text color for badge */
   padding: 3px 8px;
   border-radius: 3px;
   font-size: 0.7em;
@@ -46,7 +47,7 @@
   padding: 15px;
   max-height: 400px; /* Scrollable message area */
   overflow-y: auto;
-  background-color: var(--background-color); /* Lighter background for thread area */
+  background-color: var(--card-bg); /* Changed to card-bg for consistency */
   margin-bottom: 20px;
 }
 
@@ -61,14 +62,14 @@
 
 .message-bubble.sent {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--button-text-color); /* Use button text color */
   margin-left: auto; /* Align to right */
   border-bottom-right-radius: 0;
 }
 
 .message-bubble.received {
   background-color: var(--secondary-color);
-  color: white;
+  color: var(--button-secondary-text-color); /* Use specific button text color for secondary */
   margin-right: auto; /* Align to left */
   border-bottom-left-radius: 0;
 }
@@ -77,16 +78,20 @@
   font-weight: bold;
   font-size: 0.9em;
   margin-bottom: 5px;
+  color: var(--text-color); /* Ensure sender name adapts */
 }
 
 .message-content {
   font-size: 1em;
   margin-bottom: 5px;
+  color: inherit; /* Inherit color from bubble, or explicitly var(--button-text-color) / var(--button-secondary-text-color) */
 }
 
 .message-date {
   font-size: 0.7em;
-  color: rgba(255, 255, 255, 0.7); /* Lighter date text in bubbles */
-  text-align: right; /* Ensure date aligns within bubble */
-  display: block; /* To apply text-align */
+  color: rgba(255, 255, 255, 0.7); /* This is still hardcoded for white background. Better to use a variable. */
+  /* Replaced with: */
+  color: var(--message-date-color, rgba(255, 255, 255, 0.7)); /* Default to existing if not defined */
+  text-align: right;
+  display: block;
 }
